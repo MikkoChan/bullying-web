@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px; /* Default height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(25, 42, 35, 0.8);
+    padding: 0 20px;
+    z-index: 100;
+    transition: height 0.3s ease; /* Smooth transition for height adjustment */
+}
+
+.logo-title-group {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo {
+    width: 80px; /* Default logo size */
+    display: block;
+    margin-right: 20px;
+    transition: width 0.3s ease; /* Smooth transition for logo resizing */
+}
+
+.navbar h1 {
+    color: white;
+    margin: 0;
+    transition: font-size 0.3s ease; /* Smooth transition for text resizing */
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: #E6E6FA;
+    padding: 6px 13px;
+    font-size: 20px; /* Default font size */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+    background: #b7e4c7;
+    color: #0f5132;
+    border-radius: 25px;
+}
+
+#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('bullying.jpg') no-repeat center center / cover; /* Ensure full cover and centered */
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        height: 60px; /* Smaller navbar height */
+    }
+
+    .navbar .logo {
+        width: 60px; /* Smaller logo */
+    }
+
+    .navbar h1 {
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Smaller link font size */
+    }
+
+    #home {
+        background-size: contain; /* Adjust background sizing if needed */
+    }
+}
+
+
+
+.spacer {
+    flex-grow: 1;
+}
+
+.center h1, .center h2 {
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+}
+
+#videoSection {
+    text-align: center;
+    margin: 20px 0; /* Provide some spacing around the section */
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio maintains the proportion */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* Ensures the wrapper takes the full width of its container */
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 50%; /* Centers the iframe vertically within the parent */
+    left: 50%; /* Centers the iframe horizontally within the parent */
+    width: 75%; /* Desired width of the iframe */
+    height: 75%; /* Desired height of the iframe */
+    transform: translate(-50%, -50%); /* Shifts the iframe to truly center it */
+}
+
+.videoDescription {
+    margin-top: 10px; /* Reduces space to keep description close to the video */
+}
+
+h2 {
+    margin-bottom: 20px; /* Adds space below the title to separate it from the video */
+    color: #2c3e50; /* Styling for the title, adjust color as necessary */
+    font-size: 1.5rem; /* Adjust title size */
+}
+
+.legal-information {
+    background-color: #e8f5e9; /* Light green background for a soft, inviting look */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
+    font-size: 1rem; /* Slightly larger font for better readability */
+    line-height: 1.7; /* Enhanced line height for easier reading */
+    color: #000000; /* Dark grey for text, provides good contrast against light background */
+}
+
+.legal-information h2 {
+    color: #2e7d32; /* Darker shade of green for headings to emphasize importance */
+    margin-bottom: 18px; /* Slightly more space below heading for visual separation */
+}
+
+/* Additional styles to improve visual hierarchy and focus */
+.legal-information p {
+    margin-bottom: 12px; /* Ensures consistent spacing between paragraphs for clean layout */
+}
+
+.legal-information a {
+    color: #388e3c; /* Green color for links, making them stand out yet cohesive with the theme */
+    text-decoration: none; /* Removes underline from links for a cleaner appearance */
+}
+
+.legal-information a:hover {
+    text-decoration: underline; /* Adds underline on hover for links to indicate interactivity */
+}
+
+#aboutSection {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.bullying-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.bullying-type {
+    background-color: #b8e994;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bullying-type:hover {
+    transform: translateY(-5px);
+}
+
+.bullying-type h2 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.bullying-type p {
+    font-size: 24px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+#report {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Contact Form Styles */
+.contact-container {
+        display: flex;
+        justify-content: space-between; /* This ensures that the columns have space between them */
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        background: #fff;
+    }
+    
+    .contact-form {
+        display: flex;
+        width: 100%;
+    }
+    
+    .col-1-2 {
+        flex: 1 1 50%; /* Each column takes about half the space */
+        padding: 10px;
+    }
+    
+    .input-field, .button-primary, textarea, select {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .button-primary {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px 20px;
+        float: right; /* Align the button to the right */
+    }
+    
+    .button-primary:hover {
+        background-color: #45a049;
+    }
+    
+    @media (max-width: 800px) {
+        .contact-container, .contact-form {
+            flex-direction: column;
+        }
+    
+        .col-1-2 {
+            width: 100%; /* Full width on smaller screens */
+        }
+    }
+    
+
+@media (max-width: 800px) {
+    .bullying-container, .contact-container {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .navbar .logo {
+        width: 60px;
+    }
+
+    .col-1-2 {
+        width: 100%;
+    }
+
+    .button-primary {
+        width: 100%; /* Full width button on smaller screens */
+    }
+}
+
+#about {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-header h1, .section-header h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    text-align: center;
+}
+
+.social-link a {
+    color: #3b5998;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-link a:hover {
+    color: #2c3e50;
+}
+
+.social-link i {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.social-link span {
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+.fa-facebook-square {
+    font-size: 24px;
+}
+
